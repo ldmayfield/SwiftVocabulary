@@ -13,13 +13,21 @@ class DefinitionViewController: UIViewController {
 
     @IBOutlet weak var DefinitionText: UITextView!
     
+    var vocabWord: VocabularyWord?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
-
+    func updateViews() {
+        if let VocabWord = vocabWord {
+            DefinitionText.text = VocabWord.word
+            DefinitionLabel.text = VocabWord.definition
+        }
+    }
     /*
     // MARK: - Navigation
 

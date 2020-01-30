@@ -43,10 +43,9 @@ class WordsTableViewController: UITableViewController {
  
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
         
         if segue.identifier == "ShowDefinitionSegue" {
             if let definitionVC = segue.destination as? DefinitionViewController,
@@ -54,9 +53,10 @@ class WordsTableViewController: UITableViewController {
 
             let vocabWord = vocabWords[indexPath.row]
             
-               // DefinitionViewController.s = vocabWord
+                definitionVC.vocabWord = vocabWord
         }
     }
 
 
+}
 }
